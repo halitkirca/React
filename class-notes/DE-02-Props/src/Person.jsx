@@ -1,9 +1,21 @@
-import React from 'react'
+import Msg from "./Msg";
 
-const Person = () => {
+const Person = (props) => {
+  console.log(props); //{name:osman,img:...}
+
+  //!dest
+  const { name, img, tel } = props;
+
   return (
-    <div>Person</div>
-  )
-}
+    <div>
+      <h2>{name}</h2>
 
-export default Person
+      <Msg isim={name} telefon={tel} />
+
+      <img src={img} alt="" />
+      <h4>{tel}</h4>
+    </div>
+  );
+};
+
+export default Person;
