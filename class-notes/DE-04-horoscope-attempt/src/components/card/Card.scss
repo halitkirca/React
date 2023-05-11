@@ -1,0 +1,50 @@
+// #backimage {
+//     width: 20rem;
+//     height: auto;
+// }
+.Roww {
+    display: flex;
+    justify-content: center;
+    gap: 5rem;
+    flex-wrap: wrap;
+
+    .kard {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        width: 400px;
+        height: fit-content;
+        img {
+            width: 400px;
+            height: 250px;
+        }
+        #title {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            border-radius: 10px;
+            background-color: rgb(0, 0, 0);
+            padding: 5px;
+            color: orange;
+        }
+        #date{
+            position: absolute;
+            top:7rem;
+            border-radius: 10px;
+            background-color: rgb(0, 0, 0);
+            padding: 5px;
+            color: orange;
+        }
+        #desc{
+            display: block;
+        }
+        
+    }
+}
+
+body {
+    background-color: bisque;
+}

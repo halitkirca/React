@@ -1,0 +1,20 @@
+header {
+    background-color: rgb(228, 66, 6);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:5px 10px;
+
+    .navigation {
+        width: 25rem;
+        display: flex;
+        justify-content: space-between;
+        a{
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+            border-radius: 10px;
+            background-color: orange;
+            padding: 5px;
+        }
+    }
+}

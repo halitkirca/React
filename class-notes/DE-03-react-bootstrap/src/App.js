@@ -11,7 +11,7 @@ function App() {
       <MyNavbar />
 
       <CourseCard data={dataa} />
-
+      {/* tagin yaninda yazilanlar property key gibi olur, ve hep object gönderir */}
       <Footer />
     </div>
   );
