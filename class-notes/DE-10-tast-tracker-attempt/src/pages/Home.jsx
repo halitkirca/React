@@ -3,6 +3,7 @@ import GorevEkle from "../components/GorevEkle";
 import GorevleriGoster from "../components/GorevleriGoster";
 
 import Data from "../helper/Data";
+import { FaTrashAlt } from "react-icons/fa";
 
 const Home = () => {
 
@@ -16,7 +17,6 @@ const Home = () => {
 
   const postTask = (newTask) => {
     tasks.push(newTask);
-    console.log(tasks);
     getTasks(tasks);
   }
 
