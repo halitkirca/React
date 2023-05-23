@@ -1,32 +1,38 @@
 import { useState } from "react";
 
-const GorevEkle = ({postTask, tasks}) => {
-  
+const GorevEkle = ({ setTasks, tasks }) => {
   const [taskName, setTaskName] = useState("");
   const [date, setDate] = useState("");
+  const [barFlag, setBarFlag] = useState(true);
 
   const add = (e) => {
-  e.preventDefault();
-  postTask({
-    id: tasks.length + 1,
-    text: taskName,
-    day: date,
-    bitti: false,
-  });
-}
- 
+    e.preventDefault();
+
+    setTasks([
+      ...tasks, {
+        id: tasks ? tasks[tasks.length - 1].id + 1 : 1,
+        text: taskName,
+        day: date,
+        bitti: false,
+      },
+    ]);
+    console.log(tasks);
+  };
+
   return (
     <div>
       <header className="header">
         <h1>TASK TRACKER</h1>
         <button
           className="btn"
-          
+          onClick={() => setBarFlag(!barFlag)}
+          style={{ backgroundColor: barFlag === true ? "red" : "purple" }}
         >
-           ADD TASK BAR
+          {barFlag === true ? "CLOSE" : "SHOW"} ADD TASK BAR
         </button>
       </header>
-        <form onSubmit={add}>
+      {barFlag === true && (
+        <form id="form" onSubmit={add}>
           <div className="form-control">
             <label htmlFor="text">Task</label>
             <input
@@ -34,7 +40,7 @@ const GorevEkle = ({postTask, tasks}) => {
               type="text"
               name="text"
               placeholder="Add Task"
-             onChange={(e) => setTaskName(e.target.value)}
+              onChange={(e) => setTaskName(e.target.value)}
             />
           </div>
           <div className="form-control">
@@ -53,7 +59,7 @@ const GorevEkle = ({postTask, tasks}) => {
             </button>
           </div>
         </form>
-      
+      )}
     </div>
   );
 };

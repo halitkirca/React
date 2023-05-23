@@ -3,28 +3,20 @@ import GorevEkle from "../components/GorevEkle";
 import GorevleriGoster from "../components/GorevleriGoster";
 
 import Data from "../helper/Data";
-import { FaTrashAlt } from "react-icons/fa";
+// import { FaTrashAlt } from "react-icons/fa";
 
 const Home = () => {
 
   const [tasks, setTasks] = useState([]);
-  
-  const getTasks = (list) => {
-    setTasks(list);
-  }
 
-  useEffect(()=> {getTasks(Data)}, []);
 
-  const postTask = (newTask) => {
-    tasks.push(newTask);
-    getTasks(tasks);
-  }
+  useEffect(()=> {setTasks(Data)}, []);
 
   return (
     <div>
-      <GorevEkle tasks={tasks} postTask={postTask}/>
+      <GorevEkle tasks={tasks} setTasks={setTasks}/>
 
-      <GorevleriGoster  tasks={tasks} getTasks={getTasks}/>
+      <GorevleriGoster  tasks={tasks} setTasks={setTasks}/>
     </div>
   );
 };
