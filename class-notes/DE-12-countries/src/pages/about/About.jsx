@@ -3,7 +3,7 @@ import React from 'react'
 
 const About = () => {
   return (
-  <div>About  istediğiniz kodlarla doldurabilirsiniz burayı</div>
+  <div style={{textAlign:"center", marginTop:"2rem"}}>Halit was here!</div>
   );
 }
 

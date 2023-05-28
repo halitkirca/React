@@ -1,8 +1,7 @@
 import "./Footer.css";
-
 const Footer = () => {
   return (
-   <div>Footer</div>
+   <footer>Ugly Footer</footer>
   );
 };
 
