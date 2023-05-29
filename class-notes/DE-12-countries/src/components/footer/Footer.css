@@ -1,7 +1,6 @@
 
 footer {
-    position: fixed;
-    bottom: 1rem;
+    margin-bottom: 1rem;
     width: 100vw;
     text-align: center;
 }

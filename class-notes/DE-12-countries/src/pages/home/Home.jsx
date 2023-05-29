@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import "./Home.css";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const [countries, setCountries] = useState([]);
-
+  const navigate = useNavigate();
   // const url = ("https://restcountries.com/v3.1/all");
 
   useEffect(() => {
     fetch("https://restcountries.com/v3.1/all")
     .then((res) => res.json())
-    .then((data) => setCountries(data));
+    .then((data) => setCountries(data))
+    .then(() => console.log(countries));
   }, []);
 
 
@@ -18,11 +20,11 @@ const Home = () => {
 
   return (
     <main>
-      {countries.map((a) => {
+      {countries.map(({flags,name},id) => {
         return (
-          <div>
-            <button>DETAYLAR</button>
-          </div>
+          <div key={id} onClick={() => navigate(`/details/${name.common}`)}>
+          <img  src={flags.png} alt="" />
+        </div>
         );
       })}
     </main>

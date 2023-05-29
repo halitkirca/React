@@ -1,3 +1,11 @@
 main {
-    margin-top: 2rem;
+    margin: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 1rem;
+}
+main div img {
+    width: 150px;
+    height: fit-content;
 }
