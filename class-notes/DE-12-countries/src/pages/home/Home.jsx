@@ -11,7 +11,6 @@ const Home = () => {
     fetch("https://restcountries.com/v3.1/all")
     .then((res) => res.json())
     .then((data) => setCountries(data))
-    .then(() => console.log(countries));
   }, []);
 
 

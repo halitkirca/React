@@ -8,4 +8,5 @@ main {
 main div img {
     width: 150px;
     height: fit-content;
+    border: 2px solid rgb(156, 156, 156);
 }
