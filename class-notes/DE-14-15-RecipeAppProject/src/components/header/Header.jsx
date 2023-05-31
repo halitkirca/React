@@ -1,29 +1,29 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {HeaderContainer, MainHeader} from "./HeaderStyles";
 import { FoodInput } from './HeaderStyles';
 import { Button } from './HeaderStyles';
 import { FormContainer } from './HeaderStyles';
 import { Select } from './HeaderStyles';
-import { useNavigate } from 'react-router-dom';
-const Header = () => {
+const Header = ({setFoodInput, setMeal, getData}) => {
 
-  const [foodinput, SetFoodInput]= useState("");
-  const [meal, SetMeal] = useState("");
-  const navigate = useNavigate();
+  const submit = (e) => {
+  e.preventDefault();
+getData();
+  }
 
   return (
     <div>
       <HeaderContainer>
         <MainHeader> Food App</MainHeader>
-        <FormContainer>
+        <FormContainer onSubmit={submit}>
           <FoodInput
             placeholder="Type"
-            onChange={(e) => SetFoodInput(e.target.value)}
+            onChange={(e) => setFoodInput(e.target.value)}
           ></FoodInput>
-          <Button onClick={() => navigate(`/home`)}>
+          <Button>
             Search
           </Button>
-          <Select onChange={(e) => SetMeal(e.target.value)}>
+          <Select onChange={(e) => setMeal(e.target.value)}>
             <option value="breakfast">Breakfast</option>
             <option value="lunch">Lunch</option>
             <option value="teatime">Teatime</option>

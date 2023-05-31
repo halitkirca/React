@@ -5,7 +5,7 @@ const Navbar = () => {
   return (
     <div>
       <Nav>
-        <Logo to={"/"}>
+        <Logo to={"/home"}>
           <code>{"<Hal/>"}</code> <span>recipe</span>
         </Logo>
         <Menu>
