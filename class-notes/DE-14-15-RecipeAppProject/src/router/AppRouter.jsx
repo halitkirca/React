@@ -6,7 +6,7 @@ import About from "../pages/about/About";
 import Details from "../pages/details/Details";
 import Login from "../pages/login/Login";
 import Footer from "../components/footer/Footer";
-import PrivateRouter from "./PrivateRouter";
+// import PrivateRouter from "./PrivateRouter";
 
 const AppRouter = () => {
   return (
