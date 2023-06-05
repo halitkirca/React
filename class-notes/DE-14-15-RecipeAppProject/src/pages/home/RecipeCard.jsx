@@ -9,13 +9,14 @@ const RecipeCard = ({foodlist}) => {
       <MainContainer>
     {foodlist.map(({recipe}, id) => {console.log(recipe);
       return (
-        
         <Cards key={id}>
           <RecipeHeader>{recipe.label}</RecipeHeader>
-          <RecipeImage src={recipe.image}/>
-          <Button onClick={() => navigate(`/details`)}>Details</Button>
+          <RecipeImage src={recipe.image} />
+          <Button onClick={() => navigate("/details", { state: { i } })}>
+            Details
+          </Button>
         </Cards>
-      )}
+      );}
     ) }
       </MainContainer> 
     </div>
