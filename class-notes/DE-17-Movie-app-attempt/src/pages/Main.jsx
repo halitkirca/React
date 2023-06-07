@@ -23,6 +23,7 @@ const Main = () => {
 
   return (
     <div>
+    <div className='search'>
       <input
         placeholder="Search a movie..."
         onChange={(e) => setInput(e.target.value)}
@@ -36,8 +37,9 @@ const Main = () => {
       >
         Search
       </button>
+      </div>
 
-      <div>
+      <div className='divcards'>
         {data.map((i) => {
           return <MovieCard key={i.id} props={i} />;
         })}
