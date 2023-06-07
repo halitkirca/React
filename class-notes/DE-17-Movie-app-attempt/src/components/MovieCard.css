@@ -1,0 +1,16 @@
+
+.card {
+    width: 350px;
+    height: fit-content;
+    background-color: rgb(75, 131, 236);
+    color: white;
+}
+
+.card h1 {
+    font-size: larger;
+    padding-left: 10px;
+}
+
+.card p {
+    display: none;
+}
